@@ -10,18 +10,21 @@ import { MetaMaskConnector } from 'wagmi/connectors/metaMask'
 import { Slide, ToastContainer } from 'react-toastify'
 
 const { chains, publicClient, webSocketPublicClient } = configureChains([mainnet, arbitrum, optimism, gnosis], [publicProvider()])
-
+const { connectors } = getDefaultWallets({
+  appName: 'My RainbowKit App',
+  projectId: '68da90dc048d016fd402ec20b134a8d0',
+  chains
+});
 export const wagmiConfig = createConfig({
   autoConnect: true,
-  connectors: [new MetaMaskConnector({ chains })],
+  connectors,
   publicClient,
-  webSocketPublicClient,
 })
 
 export default function Providers({ children }: { children: React.ReactNode }) {
   return (
     <WagmiConfig config={wagmiConfig}>
-      <ToastContainer
+      {/* <ToastContainer
         position='bottom-center'
         transition={Slide}
         autoClose={2500}
@@ -33,8 +36,9 @@ export default function Providers({ children }: { children: React.ReactNode }) {
         draggable={false}
         pauseOnHover
         theme='dark'
-      />
+      /> */}
       <RainbowKitProvider
+      coolMode={true}
         chains={chains}
         theme={darkTheme({
           accentColor: '#D0CAB9',

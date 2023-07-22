@@ -7,12 +7,45 @@ import NounsTwo from '../../public/body2.svg'
 import { Dashboard } from '@/components'
 import Image from 'next/image'
 
-const item = {
-  name: 'Arbitrum',
-  proposals: 15,
-  holders: 40,
-  voters: 26,
+type Item = {
+  name: string
+  proposals: number
+  holders: number
+  voters: number
 }
+
+const items: Item[] = [
+  {
+    name: "Gnosis DAO",
+    proposals: 227,
+    holders: 27302,
+    voters: 15782
+  },
+  {
+    name: "Nouns DAO",
+    proposals: 227,
+    holders: 27302,
+    voters: 15782
+  },
+  {
+    name: "Arbitrum",
+    proposals: 227,
+    holders: 27302,
+    voters: 15782
+  },
+  {
+    name: "Optimism",
+    proposals: 227,
+    holders: 27302,
+    voters: 15782
+  },
+  {
+    name: "Aave",
+    proposals: 227,
+    holders: 27302,
+    voters: 15782
+  }
+]
 
 export default function Home() {
   return (
@@ -21,7 +54,7 @@ export default function Home() {
         <Image src={NounsOne} alt='nouns-1' className='w-40' />
         <Image src={NounsTwo} alt='nouns-2' className='w-40' />
       </div>
-      <Dashboard items={[item]} />
+      <Dashboard items={items} />
     </main>
   )
 }

@@ -1,3 +1,5 @@
+import Link from "next/link"
+
 type Item = {
   name: string
   proposals: number
@@ -32,11 +34,11 @@ export default function Dashboard({ items }: { items: Item[] }) {
                 return (
                   <tr className='bg-white border-b dark:bg-[#F6F2E7] dark:border-[#D0CAB9] hover:bg-gray-50 dark:hover:bg-gray-600'>
                     <th scope='row' className='px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-black'>
-                      Apple MacBook Pro 17"
+                      <Link href={item.name.toLowerCase().replace(" ", "")}>{item.name}</Link>
                     </th>
-                    <td className='px-6 py-4'>Silver</td>
-                    <td className='px-6 py-4'>Laptop</td>
-                    <td className='px-6 py-4'>$2999</td>
+                    <td className='px-6 py-4'>{item.proposals}</td>
+                    <td className='px-6 py-4'>{item.holders}</td>
+                    <td className='px-6 py-4'>{item.voters}</td>
                   </tr>
                 )
               })}
