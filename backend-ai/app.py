@@ -82,9 +82,9 @@ def get_user_infos_api():
         preds = [{"score": round(pred["score"], 4), "label": pred["label"]}
             for pred in preds]
         
-        if preds["label"] == "POSITIVE":
+        if preds[0]["label"] == "POSITIVE":
             pos_scores += item["score"]
-        elif preds["label"] == "NEGATIVE":
+        elif preds[0]["label"] == "NEGATIVE":
             neg_scores += item["score"]
         counter += 1
    
