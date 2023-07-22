@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.progress-bar-bg {
+  fill: transparent;
+  stroke: #ccc;
+  stroke-width: 10;
+}
+
+.progress-bar {
+  fill: transparent;
+  stroke: #007bff; /* Replace with your desired progress color */
+  stroke-width: 10;
+  stroke-linecap: round;
+  transform: rotate(-90deg);
+  transform-origin: 50% 50%;
+  transition: stroke-dashoffset 0.1s ease;
+}
+
