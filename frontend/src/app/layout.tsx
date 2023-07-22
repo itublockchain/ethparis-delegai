@@ -18,13 +18,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang='en'>
       <body className={inter.className}>
         <Providers>
-          <nav className='bg-[#486858] h-[120px] w-full flex justify-end items-center p-4'>
+          <nav className='bg-[#486858] h-[120px] w-full flex justify-end items-center p-4 fixed z-10'>
             <Image src={logo} alt={'Logo'} className='left-[50%] object-fit absolute -translate-x-[50%]' />
             <div className='bg-[]'>
               <ConnectOrSwitchNetworkButton />
             </div>
           </nav>
-          {children}
+          <div className='pt-[100px]'>{children}</div>
         </Providers>
       </body>
     </html>
