@@ -4,7 +4,8 @@ import { Inter } from 'next/font/google'
 import Image from 'next/image'
 import logo from '../../public/logo.png'
 import Providers from './providers'
-import { ConnectButton } from '@/components'
+import { ConnectOrSwitchNetworkButton } from '@/components'
+
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
@@ -17,9 +18,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang='en'>
       <body className={inter.className}>
         <Providers>
-          <nav className='bg-[#486858] h-[120px] w-full flex justify-end'>
-            <Image src={logo} alt={'Logo'} className='left-[50%] object-fit absolute -translate-x-[50%] translate-y-[50%]' />
-            <ConnectButton />
+          <nav className='bg-[#486858] h-[120px] w-full flex justify-end items-center p-4'>
+            <Image src={logo} alt={'Logo'} className='left-[50%] object-fit absolute -translate-x-[50%]' />
+            <div className='bg-[]'>
+              <ConnectOrSwitchNetworkButton />
+            </div>
           </nav>
           {children}
         </Providers>
