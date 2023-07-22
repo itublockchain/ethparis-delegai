@@ -1,5 +1,6 @@
 import { ProgressBar } from './ProgressBar'
 import { DashboardComponent } from './DashboardComponent'
-import ConnectButton from './ConnectButton'
+import ConnectOrSwitchNetworkButton from './ConnectOrSwitchNetworkButton.tsx'
+import Dashboard from './Dashboard'
 
-export { ProgressBar, DashboardComponent, ConnectButton }
+export { ProgressBar, DashboardComponent, ConnectOrSwitchNetworkButton, Dashboard }
